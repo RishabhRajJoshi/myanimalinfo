@@ -118,7 +118,7 @@ app.post("/", function (req, res) {
 
     if(body.totalResults  === 0)
     {
-      res.redirect("/");
+      res.redirect("https://myanimalinfo.vercel.app/");
     }
     else{
 
