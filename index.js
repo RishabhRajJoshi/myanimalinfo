@@ -111,8 +111,18 @@ app.post("/", function (req, res) {
   request(options3, function (error, response) {
     if (error) throw new Error(error);
 
+    
+
     const body = JSON.parse(response.body);
-    const firstNews = body.articles[0].title;
+
+
+    if(body.totalResults  === 0)
+    {
+      res.redirect("/");
+    }
+    else{
+
+      const firstNews = body.articles[0].title;
     const firstLink = body.articles[0].url;
 
     const secondNews = body.articles[1].title;
@@ -139,6 +149,8 @@ app.post("/", function (req, res) {
     console.log(news)
      console.log(data);
 
+    }
+    
     
   });
 
@@ -159,10 +171,12 @@ app.post("/", function (req, res) {
 
   request(options1, function (error, response) {
     if (error) throw new Error(error);
+    
 
     const body = JSON.parse(response.body);
 
     const first = body[0];
+
 
     /// animal-info
     const titleName = first.name;
