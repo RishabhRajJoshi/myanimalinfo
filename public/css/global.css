@@ -1,0 +1,29 @@
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+
+  /* font sizes */
+  --font-size-2xs: 18px;
+  --font-size-xs: 20px;
+  --font-size-sm: 24px;
+  --font-size-base: 32px;
+
+  /* Colors */
+  --color-tan-100: #909eb9;
+  --color-tan-200: #2A354B;
+  --color-white: #fff;
+  --color-gray-100: #808080;
+  --color-gray-200: rgba(255, 255, 255, 0.8);
+  --color-indigo: #3366cc;
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-0: 0px;
+
+  /* Paddings */
+  --padding-md: 20px;
+
+  /* border radiuses */
+  --br-sm: 10px;
+  --br-md: 30px;
+}

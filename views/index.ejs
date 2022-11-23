@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <title></title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+</head>
+
+<body>
+  <div class="frame-div">
+    <header class="header">
+      <img class="myanimalinfo-1-1" alt="" src="images/myanimalinfo-1-1@2x.png" />
+    </header>
+    <div class="search-div" id="search">
+      <div class="frame-div1">
+        <div class="frame-div2">
+          <div class="component-1-div">
+            <div class="rectangle-div"></div>
+            <img class="vector-icon" alt="" src="images/vector.svg" />
+          </div>
+          <form action="/" method="post">
+            <input class="search-blank-input" type="search" placeholder="Animal Search" name="animal" />
+        </div>
+        <button type="submit" class="search-button"><b class="search-b">Search</b></button>
+      </div>
+    </div>
+    </form>
+    <main class="content-page-main">
+      <div class="frame-div3">
+        <div class="frame-div4">
+          <img class="animal-image-icon" alt="" src= <%=  firstImage  %>  />
+        </div>
+        <div class="frame-div5">
+          <div class="animal-name-div">
+            <div class="anomal-info-div"></div>
+            <div class="animal-name-div1"></div>
+            <div class="box-turtle-div"><%=titleName%> </div>
+            <div class="scientific-name-terrapene-car">
+              <p class="scientific-name-p">
+                scientific name:
+                <%= scientificName %>
+                kingdom: <%= kingdom %> 
+                phylum :<%=  phylum%> 
+                class : <%= className %> 
+                order : <%= order %> 
+                family :<%= family %> 
+                genus :<%= genus %> 
+              </p>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-div6">
+        <div class="frame-div7">
+          <div class="characterstic-div">
+            <div class="animal-discp-div"></div>
+            <div class="characterstic-div1"></div>
+            <div class="characteristics-div">Characteristics</div>
+            <div class="lifespan-100-plus-years-weig">
+<p class="scientific-name-p"> lifespan : <%= lifespan %>
+weight : <%= weight %>
+length : <%= length %>
+type : <%= type %>
+diet : <%= diet%>
+color :<%= color %>
+habitat : <%= habitat %>
+location :<%= location %> </p>
+             
+              <p class="blank-line-p2"><span class="length">&nbsp;</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="frame-div8">
+          <div class="fact-div">
+            <div class="do-you-know-div"></div>
+            <div class="fact-div1"></div>
+            <div class="fact-div2">Fact</div>
+            <div class="inhabits-freshwater-habitats-a">
+              <p class="scientific-name-p">
+               <%= fact %> 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-div9">
+        <div class="recent-news-div">
+          <div class="recent-news-div1"></div>
+               <div class="recent-news-div2"></div>
+          <div class="recent-news-div3">Recent News</div>
+          <div class="turtle-poaching-for-pet-trade">
+            <p class="scientific-name-p">
+              ><%= firstNews %> 
+            </p>
+            <p class="read-more-p"> <a href= <%= firstLink %> target="_blank" >Read More</a></p>
+            <p class="scientific-name-p" style=" margin-top: 20px;">
+              ><%= secondNews %> 
+            </p>
+            <p class="read-more-p" style=" margin-top: 20px;"><a href= <%= secondLink %> target="_blank" >Read More</a></p>
+            <p class="scientific-name-p">
+              ><%=thirdNews  %> 
+            </p>
+            <p class="read-more-p"><a href= <%= thirdLink %> target="_blank" >Read More</a></p>
+            <p class="scientific-name-p" style=" margin-top: 20px;">
+              ><%= fourthNews %> 
+            </p>
+            <p class="read-more-p"><a href= <%= fourthLink %> target="_blank" >Read More</a></p>
+          </div>
+
+
+
+        
+        </div>
+        <button class="adopt-it-button" id="adoptItButton">
+          <div class="adopt-it">DONATE</div>
+        </button>
+      </div>
+    </main>
+    <footer class="footer">
+
+      <div class="frame-div10">
+        <div class="footer-div">
+          <button class="linkedin-button" id="linkedinButton">
+            <img class="linkedin-icon" alt="" src="images/linkedin.svg" /><img class="linkedin-icon1" alt=""
+              src="images/linkedin1.svg" /></button><button class="linkedin-button" id="githubButton">
+            <img class="linkedin-icon" alt="" src="images/linkedin.svg" /><img class="vector-icon1" alt=""
+              src="images/vector1.svg" /></button><button class="linkedin-button" id="instagramButton">
+            <img class="linkedin-icon" alt="" src="images/linkedin.svg" /><img class="vector-icon2" alt=""
+              src="images/vector2.svg" />
+          </button>
+        </div>
+        <div class="created-by-rishabh-raj-joshi" id="createdBy">
+          Created By : RISHABH RAJ JOSHI
+        </div>
+      </div>
+    </footer>
+  </div>
+   
+  <script>
+    var adoptItButton = document.getElementById("adoptItButton");
+    
+    if (adoptItButton) {
+      adoptItButton.addEventListener("click", function () {
+        window.open("https://gifts.worldwildlife.org/gift-center/one-time-donation.aspx");
+      });
+    }
+
+    var linkedinButton = document.getElementById("linkedinButton");
+    if (linkedinButton) {
+      linkedinButton.addEventListener("click", function () {
+        window.open("http://linkedin.com/in/rishabh-raj-joshi");
+      });
+    }
+
+    var githubButton = document.getElementById("githubButton");
+    if (githubButton) {
+      githubButton.addEventListener("click", function () {
+        window.open("http://linkedin.com/in/rishabh-raj-joshi");
+      });
+    }
+
+    var instagramButton = document.getElementById("instagramButton");
+    if (instagramButton) {
+      instagramButton.addEventListener("click", function () {
+        window.open("http://linkedin.com/in/rishabh-raj-joshi");
+      });
+    }
+
+    var createdBy = document.getElementById("createdBy");
+    if (createdBy) {
+      createdBy.addEventListener("click", function () {
+        window.open("http://linkedin.com/in/rishabh-raj-joshi");
+      });
+    }
+  </script>
+</body>
+
+</html>
