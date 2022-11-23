@@ -17,8 +17,8 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
-    "netlify-cli": "^12.2.6",
-    "request": "^2.88.2",
-    "serverless-http": "^3.1.0"
+    
+    "request": "^2.88.2"
+  
   }
 }
