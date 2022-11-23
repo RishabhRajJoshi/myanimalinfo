@@ -1,20 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
-const path = require("path")
+const path = require("path");
 
 const { response } = require("express");
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, "public")));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 var data = {
   firstImage: null,
-  titleName : null,
+  titleName: null,
   fact: null,
   scientificName: null,
   kingdom: null,
@@ -32,14 +32,9 @@ var data = {
   color: null,
   habitat: null,
   location: null,
-
- 
 };
 
-
-var news ={
-
-
+var news = {
   firstNews: null,
   firstLink: null,
 
@@ -51,12 +46,12 @@ var news ={
 
   fourthNews: null,
   fourthLink: null,
-}
+};
 
 app.get("/", function (req, res) {
   res.render("index", {
     firstImage: null,
-    titleName : null,
+    titleName: null,
     fact: null,
     scientificName: null,
     kingdom: null,
@@ -65,7 +60,7 @@ app.get("/", function (req, res) {
     order: null,
     family: null,
     genus: null,
-  
+
     lifespan: null,
     weight: null,
     length: null,
@@ -76,16 +71,16 @@ app.get("/", function (req, res) {
     location: null,
 
     firstNews: null,
-  firstLink: null,
+    firstLink: null,
 
-  secondNews: null,
-  secondLink: null,
+    secondNews: null,
+    secondLink: null,
 
-  thirdNews: null,
-  thirdLink: null,
+    thirdNews: null,
+    thirdLink: null,
 
-  fourthNews: null,
-  fourthLink: null,
+    fourthNews: null,
+    fourthLink: null,
   });
 });
 
@@ -106,60 +101,42 @@ app.post("/", function (req, res) {
     },
   };
 
-
-
   request(options3, function (error, response) {
     if (error) throw new Error(error);
 
-    
-
     const body = JSON.parse(response.body);
 
-
-    if(body.totalResults  === 0)
-    {
+    if (body.totalResults === 0) {
       res.redirect("/");
-    }
-    else{
-
+    } else {
       const firstNews = body.articles[0].title;
-    const firstLink = body.articles[0].url;
+      const firstLink = body.articles[0].url;
 
-    const secondNews = body.articles[1].title;
-    const secondLink = body.articles[1].url;
+      const secondNews = body.articles[1].title;
+      const secondLink = body.articles[1].url;
 
-    const thirdNews = body.articles[2].title;
-    const thirdLink = body.articles[2].url;
+      const thirdNews = body.articles[2].title;
+      const thirdLink = body.articles[2].url;
 
-    const fourthNews = body.articles[3].title;
-    const fourthLink = body.articles[3].url;
+      const fourthNews = body.articles[3].title;
+      const fourthLink = body.articles[3].url;
 
-    news.firstNews = firstNews;
-    news.firstLink = firstLink;
+      news.firstNews = firstNews;
+      news.firstLink = firstLink;
 
-    news.secondNews = secondNews;
-    news.secondLink = secondLink;
+      news.secondNews = secondNews;
+      news.secondLink = secondLink;
 
-    news.thirdNews = thirdNews;
-    news.thirdLink = thirdLink;
+      news.thirdNews = thirdNews;
+      news.thirdLink = thirdLink;
 
-    news.fourthNews = fourthNews;
-    news.fourthLink = fourthLink;
+      news.fourthNews = fourthNews;
+      news.fourthLink = fourthLink;
 
-    console.log(news)
-     console.log(data);
-
+      console.log(news);
+      console.log(data);
     }
-    
-    
   });
-
-
-
-
-
-
-
 
   var options1 = {
     method: "GET",
@@ -171,12 +148,10 @@ app.post("/", function (req, res) {
 
   request(options1, function (error, response) {
     if (error) throw new Error(error);
-    
 
     const body = JSON.parse(response.body);
 
     const first = body[0];
-
 
     /// animal-info
     const titleName = first.name;
@@ -196,7 +171,7 @@ app.post("/", function (req, res) {
       family,
       genus
     );
-    data.titleName= titleName;
+    data.titleName = titleName;
     data.scientificName = scientificName;
     data.kingdom = kingdom;
     data.phylum = phylum;
@@ -219,7 +194,6 @@ app.post("/", function (req, res) {
     const location = characteristics.location;
 
     console.log(lifespan, weight, length, type, diet, color, habitat, location);
-   
 
     data.lifespan = lifespan;
     data.weight = weight;
@@ -293,22 +267,9 @@ app.post("/", function (req, res) {
       fourthNews: news.fourthNews,
       fourthLink: news.fourthLink,
     });
-
-
-
-
-
-
-
-
   });
-
-  
-  
- 
 });
 
-app.listen(process.env.PORT || 3000 , function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("server started on port 3000");
 });
-
