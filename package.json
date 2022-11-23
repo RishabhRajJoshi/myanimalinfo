@@ -2,8 +2,8 @@
   "name": "locofy-hackathon",
   "version": "1.0.0",
   "scripts": {
-    "start": "node app.js",
-    "build": "parcel build ./*.html --dist-dir ./build"
+    "start": "node app.js"
+   
   },
   "author": "",
   "license": "ISC",
