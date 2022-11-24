@@ -16,7 +16,7 @@
 <body>
   <div class="frame-div">
     <header class="header">
-      <img class="myanimalinfo-1-1" alt="" src="images/myanimalinfo-1-1@2x.png" />
+      <img class="myanimalinfo" alt="" src="images/myanimalinfo-1-1@2x.png" />
     </header>
     <div class="search-div" id="search">
       <div class="frame-div1">
@@ -41,17 +41,17 @@
           <div class="animal-name-div">
             <div class="anomal-info-div"></div>
             <div class="animal-name-div1"></div>
-            <div class="box-turtle-div"><%=titleName%> </div>
-            <div class="scientific-name-terrapene-car">
-              <p class="scientific-name-p">
-                scientific name:
-                <%= scientificName %>
-                kingdom: <%= kingdom %> 
-                phylum :<%=  phylum%> 
-                class : <%= className %> 
-                order : <%= order %> 
-                family :<%= family %> 
-                genus :<%= genus %> 
+            <div class="title-name-div"><%=titleName%> </div>
+            <div class="taxonomy-box">
+              <p class="taxonomy">
+      scientific name:
+      <%= scientificName %>
+      kingdom: <%= kingdom %> 
+      phylum :<%=  phylum%> 
+      class : <%= className %> 
+      order : <%= order %> 
+      family :<%= family %> 
+      genus :<%= genus %> 
               </p>
 
 
@@ -66,15 +66,15 @@
             <div class="animal-discp-div"></div>
             <div class="characterstic-div1"></div>
             <div class="characteristics-div">Characteristics</div>
-            <div class="lifespan-100-plus-years-weig">
-<p class="scientific-name-p"> lifespan : <%= lifespan %>
-weight : <%= weight %>
-length : <%= length %>
-type : <%= type %>
-diet : <%= diet%>
-color :<%= color %>
-habitat : <%= habitat %>
-location :<%= location %> </p>
+            <div class="characteristics-div-2">
+    <p class="taxonomy">     lifespan : <%= lifespan %>
+      weight : <%= weight %>
+      length : <%= length %>
+      type : <%= type %>
+      diet : <%= diet%>
+      color :<%= color %>
+      habitat : <%= habitat %>
+      location :<%= location %> </p>
              
               <p class="blank-line-p2"><span class="length">&nbsp;</span></p>
             </div>
@@ -82,11 +82,11 @@ location :<%= location %> </p>
         </div>
         <div class="frame-div8">
           <div class="fact-div">
-            <div class="do-you-know-div"></div>
+            <div class="fact-div-1"></div>
             <div class="fact-div1"></div>
             <div class="fact-div2">Fact</div>
-            <div class="inhabits-freshwater-habitats-a">
-              <p class="scientific-name-p">
+            <div class="fact-div3">
+              <p class="taxonomy">
                <%= fact %> 
               </p>
             </div>
@@ -98,31 +98,28 @@ location :<%= location %> </p>
           <div class="recent-news-div1"></div>
                <div class="recent-news-div2"></div>
           <div class="recent-news-div3">Recent News</div>
-          <div class="turtle-poaching-for-pet-trade">
-            <p class="scientific-name-p">
+          <div class="news-box">
+            <p class="taxonomy">
               ><%= firstNews %> 
             </p>
             <p class="read-more-p"> <a href= <%= firstLink %> target="_blank" >Read More</a></p>
-            <p class="scientific-name-p" style=" margin-top: 20px;">
+            <p class="taxonomy" style=" margin-top: 20px;">
               ><%= secondNews %> 
             </p>
             <p class="read-more-p" style=" margin-top: 20px;"><a href= <%= secondLink %> target="_blank" >Read More</a></p>
-            <p class="scientific-name-p">
+            <p class="taxonomy">
               ><%=thirdNews  %> 
             </p>
             <p class="read-more-p"><a href= <%= thirdLink %> target="_blank" >Read More</a></p>
-            <!-- <p class="scientific-name-p" style=" margin-top: 20px;">
-              >
-            </p>
-            <p class="read-more-p"><a href= target="_blank" >Read More</a></p> -->
+    
           </div>
 
 
 
         
         </div>
-        <button class="adopt-it-button" id="adoptItButton">
-          <div class="adopt-it">DONATE</div>
+        <button class="donate-button" id="donateButton">
+          <div class="donate">DONATE</div>
         </button>
       </div>
     </main>
@@ -147,10 +144,10 @@ location :<%= location %> </p>
   </div>
    
   <script>
-    var adoptItButton = document.getElementById("adoptItButton");
+    var donateButton = document.getElementById("donateButton");
     
-    if (adoptItButton) {
-      adoptItButton.addEventListener("click", function () {
+    if (donateButton) {
+      donateButton.addEventListener("click", function () {
         window.open("https://gifts.worldwildlife.org/gift-center/one-time-donation.aspx");
       });
     }
