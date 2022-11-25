@@ -23,14 +23,13 @@ body {
 
 .header {
   background-color: var(--color-tan-200);
-  width: 1440px;
+  width: 1520px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  padding-left: 76px;
-  padding-right: 76px;
+
 
 }
 
@@ -121,14 +120,15 @@ body {
 }
 
 .frame-div1 {
-  flex: 1;
+  /* flex: 1; */
   gap: 18px;
 }
 
 .search-div {
-  align-self: stretch;
+  /* align-self: stretch; */
   background-color: var(--color-tan-100);
   height: 184px;
+  width: 1520px;
   flex-shrink: 0;
   padding: var(--padding-md) 76px;
   box-sizing: border-box;
@@ -561,7 +561,7 @@ body {
 
 .footer {
   background-color: var(--color-tan-200);
-  width: 1440px;
+  width: 1520px;
   height: 128px;
   flex-shrink: 0;
   text-align: center;
@@ -569,8 +569,6 @@ body {
   color: var(--color-white);
   font-family: var(--font-poppins);
 
-  padding-left: 76px;
-  padding-right: 76px;
 
 }
 
