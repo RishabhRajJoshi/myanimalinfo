@@ -150,7 +150,7 @@ app.post("/", function (req, res) {
     if (error) throw new Error(error);
 
     const body = JSON.parse(response.body);
-  
+
     const first = body[0];
 
     /// animal-info
@@ -221,15 +221,18 @@ app.post("/", function (req, res) {
 
   var options2 = {
     method: "GET",
-    url: "https://api.unsplash.com/search/photos?query=" + animal +"&client_id=UqnXWifUGKCEA7wR8weVOT-ZNO9c0WJmLoYzIxEJF30",
+    url:
+      "https://api.unsplash.com/search/photos?query=" +
+      animal +
+      "&client_id=UqnXWifUGKCEA7wR8weVOT-ZNO9c0WJmLoYzIxEJF30",
     headers: {},
   };
   request(options2, function (error, response) {
     if (error) throw new Error(error);
     const body = JSON.parse(response.body);
 
-   const firstImage = body.results[0].urls.regular;
-console.log(firstImage);
+    const firstImage = body.results[0].urls.regular;
+    console.log(firstImage);
 
     data.firstImage = firstImage;
 
@@ -266,14 +269,6 @@ console.log(firstImage);
       fourthNews: news.fourthNews,
       fourthLink: news.fourthLink,
     });
-
-
-
-
-  
-
-
-
   });
 });
 
