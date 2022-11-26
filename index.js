@@ -236,41 +236,56 @@ app.post("/", function (req, res) {
 
     data.firstImage = firstImage;
 
-    res.render("index", {
-      firstImage: data.firstImage,
-      titleName: data.titleName,
-      fact: data.fact,
-      scientificName: data.scientificName,
-      kingdom: data.kingdom,
-      phylum: data.phylum,
-      className: data.className,
-      order: data.order,
-      family: data.family,
-      genus: data.genus,
 
-      lifespan: data.lifespan,
-      weight: data.weight,
-      length: data.length,
-      type: data.type,
-      diet: data.diet,
-      color: data.color,
-      habitat: data.habitat,
-      location: data.location,
-
-      firstNews: news.firstNews,
-      firstLink: news.firstLink,
-
-      secondNews: news.secondNews,
-      secondLink: news.secondLink,
-
-      thirdNews: news.thirdNews,
-      thirdLink: news.thirdLink,
-
-      fourthNews: news.fourthNews,
-      fourthLink: news.fourthLink,
-    });
+    setTimeout(function(){
+      res.render("index", {
+        firstImage: data.firstImage,
+        titleName: data.titleName,
+        fact: data.fact,
+        scientificName: data.scientificName,
+        kingdom: data.kingdom,
+        phylum: data.phylum,
+        className: data.className,
+        order: data.order,
+        family: data.family,
+        genus: data.genus,
+    
+        lifespan: data.lifespan,
+        weight: data.weight,
+        length: data.length,
+        type: data.type,
+        diet: data.diet,
+        color: data.color,
+        habitat: data.habitat,
+        location: data.location,
+    
+        firstNews: news.firstNews,
+        firstLink: news.firstLink,
+    
+        secondNews: news.secondNews,
+        secondLink: news.secondLink,
+    
+        thirdNews: news.thirdNews,
+        thirdLink: news.thirdLink,
+    
+        fourthNews: news.fourthNews,
+        fourthLink: news.fourthLink,
+      });
+  
+      console.log("Executed after 1.5 second");
+  }, 1500);
+  
+  
+    
   });
+
+
+  
+
 });
+
+
+
 
 app.listen(process.env.PORT || 3000, function () {
   console.log("server started on port 3000");
