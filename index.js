@@ -221,16 +221,15 @@ app.post("/", function (req, res) {
 
   var options2 = {
     method: "GET",
-    url: "https://imsea.herokuapp.com/api/1?q=" + animal,
+    url: "https://api.unsplash.com/search/photos?query=" + animal +"&client_id=UqnXWifUGKCEA7wR8weVOT-ZNO9c0WJmLoYzIxEJF30",
     headers: {},
   };
   request(options2, function (error, response) {
     if (error) throw new Error(error);
     const body = JSON.parse(response.body);
 
-    const firstImage = body.results[0];
-
-    console.log(firstImage);
+   const firstImage = body.results[0].urls.regular;
+console.log(firstImage);
 
     data.firstImage = firstImage;
 
